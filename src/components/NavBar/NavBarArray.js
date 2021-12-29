@@ -30,7 +30,7 @@ export const NavBarArray = [
     icon: null,
   },
   {
-    name: "Join Us",
+    name: "Create account",
     link: "#",
     external: false,
   },

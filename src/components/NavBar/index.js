@@ -38,18 +38,17 @@ export function NavBar() {
     <>
       <Flex
         width="100%"
-        height="112px"
+        height="121px"
         alignItems="center"
         position="relative"
         bgColor="#101010"
-        mb={!isMobile && "9px"}
         _after={{
           content: '""',
           width: "100%",
-          height: !isMobile && "9px",
+          height: "9px",
           display: "block",
           position: "absolute",
-          bottom: "-9px",
+          bottom: "0",
           background:
             "linear-gradient(to right, #0B0B0B, #faf3a0, #905f26, #faf3a0, #0B0B0B)",
         }}
@@ -60,7 +59,11 @@ export function NavBar() {
           mx="8vw"
           alignItems="center"
         >
-          <Image src={LogoImage.src} w={{ base: "80px", xl: "6.2vw" }} />
+          <Image
+            src={LogoImage.src}
+            alt="Logo"
+            w={{ base: "80px", xl: "6.2vw" }}
+          />
           <HStack spacing="1em">
             {isMobile ? null : (
               <Box
@@ -90,7 +93,7 @@ export function NavBar() {
                   }}
                   _focus={{ outline: "none" }}
                 >
-                  Join Us
+                  Create Account
                 </ChakraButton>
               </Box>
             )}

@@ -4,6 +4,7 @@ import guitarBanner from "assets/images/guitarBanner.jpg";
 import guitarBanner1 from "assets/images/guitarBanner1.jpg";
 import React from "react";
 import { Banner } from "components/Banner";
+import { BannerArray } from "components/Banner/BannerArray";
 
 export function HeroSection() {
   const slider = React.useRef();
@@ -14,37 +15,20 @@ export function HeroSection() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
   };
 
   return (
-    <CardSlider settings={settings} reference={slider} color="white">
-      <Banner
-        image={guitarBanner.src}
-        text={
-          <Text>
-            Tire o{" "}
-            <Text as="span" fontWeight="bold" color="#faf3a0">
-              Melhor
-            </Text>{" "}
-            do seu instrumento
-          </Text>
-        }
-      />
-      <Banner
-        image={guitarBanner1.src}
-        index="1"
-        text={
-          <Text>
-            Tire o{" "}
-            <Text as="span" fontWeight="bold" color="#faf3a0">
-              Melhor
-            </Text>{" "}
-            do seu instrumento
-          </Text>
-        }
-      />
+    <CardSlider
+      settings={settings}
+      reference={slider}
+      color="white"
+      boxShadow="0 0 2em rgba(0,0,0, 0.4)"
+    >
+      {BannerArray.map((item, index) => {
+        return <Banner key={`Banner-${index}`} text={item.text} />;
+      })}
     </CardSlider>
   );
 }

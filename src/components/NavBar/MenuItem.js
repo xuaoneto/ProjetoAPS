@@ -22,6 +22,9 @@ export function ItemMenuMobile({
             : "#1C1C1C"
         }
         color="white"
+        boxShadow={
+          router.pathname === item.link ? "0 0 2em rgba(0,0,0, 0.6)" : null
+        }
         _hover={{
           bg:
             router.pathname === item.link
@@ -41,6 +44,7 @@ export function ItemMenuMobile({
           key={`Item-${index}`}
           h="40px"
           w="100%"
+          textTransform="uppercase"
           _hover={{
             textDecor: "none",
             color: router.pathname === item.link ? "black" : "white",
